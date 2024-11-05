@@ -12,7 +12,8 @@
 		[
 			"add_executable",
 			"target_link_libraries",
-			"target_include_directories"
+			"target_include_directories",
+			"target_sources"
 		],
 		"files" : 
 		[
@@ -32,13 +33,31 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 15,
+				"line" : 20,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 12,
+				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 8,
 				"parent" : 0
 			}
 		]
@@ -56,10 +75,18 @@
 			[
 				{
 					"backtrace" : 3,
+					"path" : "/Users/mandelcohen/Projects/ClothSimCmake"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/usr/local/Cellar/sdl2/2.30.8/include"
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 5,
+					"path" : "/usr/local/Cellar/glm/1.0.1/include"
+				},
+				{
+					"backtrace" : 4,
 					"isSystem" : true,
 					"path" : "/usr/local/Cellar/sdl2/2.30.8/include/SDL2"
 				}
@@ -75,7 +102,10 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -122,7 +152,10 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3
 			]
 		}
 	],
@@ -132,6 +165,24 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "Particle.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "Constraint.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "Cloth.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

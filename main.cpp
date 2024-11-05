@@ -1,5 +1,7 @@
 #include <SDL.h>
 #include <iostream>
+#include <glm/glm.hpp>
+#include <glm/vec2.hpp>
 
 
 struct Particle {

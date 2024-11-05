@@ -5,13 +5,18 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(ClothSimCmake main.cpp)
 
-# Find SDL2 package
+target_sources(ClothSimCmake PRIVATE
+        Particle.cpp
+        Constraint.cpp
+        Cloth.cpp
+)
+
 find_package(SDL2 REQUIRED)
 
-# Include SDL2 directories
+target_include_directories(ClothSimCmake PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(ClothSimCmake PRIVATE ${SDL2_INCLUDE_DIRS})
+target_include_directories(ClothSimCmake PRIVATE /usr/local/Cellar/glm/1.0.1/include)
 
-# Link SDL2 libraries
 target_link_libraries(ClothSimCmake ${SDL2_LIBRARIES})
 
 if(APPLE)
