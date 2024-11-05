@@ -9,7 +9,7 @@ int main(int argc, char* argv[]) {
         std::cout << "SDL initialized successfully!" << std::endl;
     }
 
-    SDL_Window *win = SDL_CreateWindow("Hello SDL2", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
+    SDL_Window *win = SDL_CreateWindow("ClothSimTest1", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 640, 480, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
     if (win == nullptr) {
         std::cerr << "SDL_CreateWindow Error: " << SDL_GetError() << std::endl;
         SDL_Quit();

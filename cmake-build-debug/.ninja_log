@@ -1,3 +1,9 @@
 # ninja log v6
 11	3163	1730453859149442981	CMakeFiles/ClothSimCmake.dir/main.cpp.o	5953e4ac5e825f88
 3171	3408	1730453862309527347	ClothSimCmake	fbaa8d84ff097756
+28	515	1730796156739832558	CMakeFiles/ClothSimCmake.dir/Constraint.cpp.o	12855b0b22d71b8d
+28	624	1730796156739568898	CMakeFiles/ClothSimCmake.dir/Particle.cpp.o	9743374e0886e00c
+28	851	1730796156740312502	CMakeFiles/ClothSimCmake.dir/SimulationParams.cpp.o	91b3c002c94480aa
+28	1861	1730796156740071202	CMakeFiles/ClothSimCmake.dir/Cloth.cpp.o	fbfc31d6ce140b83
+27	2094	1730796156739099208	CMakeFiles/ClothSimCmake.dir/main.cpp.o	fa342a302f7fa2b6
+2094	2625	1730796158805864494	ClothSimCmake	1f6fa6a314ab14dd
