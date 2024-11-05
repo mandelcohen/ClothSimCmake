@@ -33,13 +33,7 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 21,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 17,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
@@ -52,6 +46,12 @@
 				"command" : 2,
 				"file" : 0,
 				"line" : 19,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 20,
 				"parent" : 0
 			},
 			{
@@ -106,7 +106,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -157,7 +158,8 @@
 				1,
 				2,
 				3,
-				4
+				4,
+				5
 			]
 		}
 	],
@@ -191,6 +193,12 @@
 			"backtrace" : 6,
 			"compileGroupIndex" : 0,
 			"path" : "SimulationParams.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 6,
+			"compileGroupIndex" : 0,
+			"path" : "SDLWindow.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

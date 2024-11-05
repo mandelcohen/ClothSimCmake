@@ -10,6 +10,7 @@ target_sources(ClothSimCmake PRIVATE
         Constraint.cpp
         Cloth.cpp
         SimulationParams.cpp
+        SDLWindow.cpp
 )
 
 find_package(SDL2 REQUIRED)

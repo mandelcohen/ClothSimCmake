@@ -15,7 +15,6 @@ public:
 
     Cloth(int width, int height, float spacing);
 
-    void initializeCloth(Cloth &cloth, int width, int height, float spacing);
     void initializeParticles();
     void initializeConstraints();
 };

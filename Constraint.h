@@ -2,7 +2,8 @@
 #define CLOTHSIMCMAKE_CONSTRAINT_H
 
 #pragma once
-#include "Particle.h"
+
+class Particle;
 
 struct Constraint {
     Particle* p1;

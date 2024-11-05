@@ -84,6 +84,13 @@ build CMakeFiles/ClothSimCmake.dir/SimulationParams.cpp.o: CXX_COMPILER__ClothSi
   OBJECT_DIR = CMakeFiles/ClothSimCmake.dir
   OBJECT_FILE_DIR = CMakeFiles/ClothSimCmake.dir
 
+build CMakeFiles/ClothSimCmake.dir/SDLWindow.cpp.o: CXX_COMPILER__ClothSimCmake_unscanned_Debug /Users/mandelcohen/Projects/ClothSimCmake/SDLWindow.cpp || cmake_object_order_depends_target_ClothSimCmake
+  DEP_FILE = CMakeFiles/ClothSimCmake.dir/SDLWindow.cpp.o.d
+  FLAGS = -g -std=gnu++20 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0 -fcolor-diagnostics
+  INCLUDES = -I/Users/mandelcohen/Projects/ClothSimCmake -I/usr/local/Cellar/sdl2/2.30.8/include -I/usr/local/Cellar/glm/1.0.1/include -isystem /usr/local/Cellar/sdl2/2.30.8/include/SDL2
+  OBJECT_DIR = CMakeFiles/ClothSimCmake.dir
+  OBJECT_FILE_DIR = CMakeFiles/ClothSimCmake.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ClothSimCmake
@@ -92,7 +99,7 @@ build CMakeFiles/ClothSimCmake.dir/SimulationParams.cpp.o: CXX_COMPILER__ClothSi
 #############################################
 # Link the executable ClothSimCmake
 
-build ClothSimCmake: CXX_EXECUTABLE_LINKER__ClothSimCmake_Debug CMakeFiles/ClothSimCmake.dir/main.cpp.o CMakeFiles/ClothSimCmake.dir/Particle.cpp.o CMakeFiles/ClothSimCmake.dir/Constraint.cpp.o CMakeFiles/ClothSimCmake.dir/Cloth.cpp.o CMakeFiles/ClothSimCmake.dir/SimulationParams.cpp.o | /usr/local/Cellar/sdl2/2.30.8/lib/libSDL2.dylib
+build ClothSimCmake: CXX_EXECUTABLE_LINKER__ClothSimCmake_Debug CMakeFiles/ClothSimCmake.dir/main.cpp.o CMakeFiles/ClothSimCmake.dir/Particle.cpp.o CMakeFiles/ClothSimCmake.dir/Constraint.cpp.o CMakeFiles/ClothSimCmake.dir/Cloth.cpp.o CMakeFiles/ClothSimCmake.dir/SimulationParams.cpp.o CMakeFiles/ClothSimCmake.dir/SDLWindow.cpp.o | /usr/local/Cellar/sdl2/2.30.8/lib/libSDL2.dylib
   FLAGS = -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.1.sdk -mmacosx-version-min=15.0
   LINK_FLAGS = -Wl,-no_pie
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/Cellar/sdl2/2.30.8/lib  /usr/local/Cellar/sdl2/2.30.8/lib/libSDL2.dylib

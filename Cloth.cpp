@@ -9,31 +9,6 @@ Cloth::Cloth(int clothWidth, int clothHeight, float particleSpacing)
     initializeConstraints();
 }
 
-void Cloth::initializeCloth(Cloth &cloth, int width, int height, float spacing) {
-    cloth.width = width;
-    cloth.height = height;
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
-            glm::vec2 position = glm::vec2(x * spacing, y * spacing);
-            cloth.particles.push_back(Particle(position));
-        }
-    }
-
-    // Create constraints
-    for (int y = 0; y < height; ++y) {
-        for (int x = 0; x < width; ++x) {
-            int idx = y * width + x;
-            if (x < width - 1) { // Horizontal constraint
-                cloth.constraints.push_back(Constraint(&cloth.particles[idx], &cloth.particles[idx + 1], spacing));
-            }
-            if (y < height - 1) { // Vertical constraint
-                cloth.constraints.push_back(Constraint(&cloth.particles[idx], &cloth.particles[idx + width], spacing));
-            }
-        }
-    }
-}
-
-
 void Cloth::initializeParticles() {
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
