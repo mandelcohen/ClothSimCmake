@@ -56,6 +56,7 @@ void SDLWindow::Render(const Cloth& cloth) {
 
 
 void SDLWindow::Clear() {
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 }
 
