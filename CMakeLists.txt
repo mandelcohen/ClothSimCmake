@@ -9,6 +9,7 @@ target_sources(ClothSimCmake PRIVATE
         Particle.cpp
         Constraint.cpp
         Cloth.cpp
+        SimulationParams.cpp
 )
 
 find_package(SDL2 REQUIRED)

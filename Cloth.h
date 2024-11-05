@@ -10,7 +10,7 @@ struct Cloth {
     std::vector<Constraint> constraints;
     int width, height;
 
-    void initializeCloth(int width, int height, float spacing);
+    void initializeCloth(Cloth &cloth, int width, int height, float spacing);
 };
 
 #endif //CLOTHSIMCMAKE_CLOTH_H

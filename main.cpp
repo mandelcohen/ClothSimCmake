@@ -1,16 +1,5 @@
 #include <SDL.h>
 #include <iostream>
-#include <glm/glm.hpp>
-#include <glm/vec2.hpp>
-
-
-struct Particle {
-    glm::vec2 position;       // Current position
-    glm::vec2 previousPosition; // For Verlet integration
-    glm::vec2 acceleration;    // Acceleration due to gravity or other forces
-    float inverseMass;         // Used to apply constraints (0 for pinned particles)
-};
-
 
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
