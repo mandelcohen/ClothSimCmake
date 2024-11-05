@@ -1,7 +1,8 @@
 #ifndef CLOTHSIMCMAKE_PARTICLE_H
 #define CLOTHSIMCMAKE_PARTICLE_H
 
-#include <glm/vec2.hpp>
+#pragma once
+#include <glm/glm.hpp>
 
 struct Particle {
     glm::vec2 position;
@@ -9,13 +10,9 @@ struct Particle {
     glm::vec2 velocity;
     glm::vec2 acceleration;
     float inverseMass;
+    bool isFixed;
 
-    Particle(const glm::vec2& startPosition, float mass)
-            : position(startPosition),
-              previousPosition(startPosition),
-              velocity(glm::vec2(0.0f, 0.0f)),
-              acceleration(glm::vec2(0.0f, 0.0f)),
-              inverseMass(mass > 0.0f ? 1.0f / mass : 0.0f) {}
+    Particle(const glm::vec2& startPosition);
 };
 
 
