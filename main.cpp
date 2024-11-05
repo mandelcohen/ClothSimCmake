@@ -1,5 +1,6 @@
 #include <SDL.h>
 #include <iostream>
+#include "Cloth.h"
 
 int main(int argc, char* argv[]) {
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -28,10 +29,13 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+    Cloth cloth(10,10,10.0f);
+    cloth.initializeCloth(cloth, 10, 10, 10.0f);
+
 
     SDL_Event e;
     bool quit = false;
+
     while (!quit) {
         while (SDL_PollEvent(&e)) {
             if (e.type == SDL_QUIT) {
@@ -39,16 +43,14 @@ int main(int argc, char* argv[]) {
             }
         }
         SDL_Delay(16); // Delay to cap the frame rate
-    }
 
-    while (!quit) {
         // Clear the screen with the background color
         SDL_RenderClear(renderer);
 
         // Set color for cloth particles and lines (for example, white)
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 
-        // Draw particles, lines, or other elements of your cloth here
+
 
         // Present the updated renderer contents to the screen
         SDL_RenderPresent(renderer);
