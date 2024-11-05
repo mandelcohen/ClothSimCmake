@@ -29,36 +29,35 @@ SDLWindow::~SDLWindow() {
     SDL_Quit();
 }
 
-
 void SDLWindow::Render(const Cloth& cloth) {
-    // Render particles and constraints from the cloth here
+
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); // Black background
+    SDL_RenderClear(renderer); // clear
+
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // white
+
     for (const auto& particle : cloth.particles) {
-        // Render each particle, for example:
         SDL_Rect rect;
         rect.x = static_cast<int>(particle.position.x);
         rect.y = static_cast<int>(particle.position.y);
-        rect.w = rect.h = 5; // Small square for particle
+        rect.w = rect.h = 5;
 
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // White color
         SDL_RenderFillRect(renderer, &rect);
     }
 
-    // Render each constraint as a line (example)
+    SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255); // gray
+
     for (const auto& constraint : cloth.constraints) {
-        SDL_SetRenderDrawColor(renderer, 200, 200, 200, 255); // Light gray color
         SDL_RenderDrawLine(renderer,
                            static_cast<int>(constraint.p1->position.x),
                            static_cast<int>(constraint.p1->position.y),
                            static_cast<int>(constraint.p2->position.x),
                            static_cast<int>(constraint.p2->position.y));
     }
+
+    SDL_RenderPresent(renderer); // present
 }
 
-
-void SDLWindow::Clear() {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-}
 
 bool SDLWindow::handleEvents() {
     SDL_Event e;

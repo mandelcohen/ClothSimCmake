@@ -11,7 +11,6 @@ int main(int argc, char* argv[]) {
     while (running) {
         running = window.handleEvents();
 
-        window.Clear();
         window.Render(cloth);
 
         SDL_Delay(16); // Cap frame rate

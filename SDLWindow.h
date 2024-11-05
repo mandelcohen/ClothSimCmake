@@ -17,7 +17,6 @@ public:
     SDLWindow(int width, int height);
     ~SDLWindow();
     void Render(const Cloth& cloth);
-    void Clear();
     bool handleEvents();
 };
 
