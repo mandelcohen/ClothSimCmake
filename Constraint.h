@@ -9,8 +9,9 @@ struct Constraint {
     Particle* p1;
     Particle* p2;
     float restLength;
+    float stiffness;
 
-    Constraint(Particle* particle1, Particle* particle2, float length);
+    Constraint(Particle* particle1, Particle* particle2, float length, float stiffness);
 };
 
 
