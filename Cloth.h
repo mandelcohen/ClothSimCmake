@@ -12,11 +12,15 @@ public:
     std::vector<Constraint> constraints;
     int width, height;
     float spacing;
+    float dampingFactor;
 
-    Cloth(int width, int height, float spacing);
+    Cloth(int width, int height, float spacing, float damping);
 
     void initializeParticles();
     void initializeConstraints();
+    void applyForces(float deltaTime);
+    void integrateMotion(float deltaTime);
+    void enforceConstraints(int iterations);
 };
 
 #endif //CLOTHSIMCMAKE_CLOTH_H
