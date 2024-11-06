@@ -57,20 +57,25 @@ void Cloth::applyForces(float deltaTime) {
     }
 }
 
-void Cloth::integrateMotion(float deltaTime) {
+void Cloth::integrateMotion(float deltaTime, int windowWidth, int windowHeight) {
     for (auto& particle : particles) {
         if (!particle.isFixed) {
-            // Verlet integration formula
             glm::vec2 tempPosition = particle.position;
             particle.position += (particle.position - particle.previousPosition) * dampingFactor
                                  + particle.acceleration * deltaTime * deltaTime;
             particle.previousPosition = tempPosition;
 
-            // Reset acceleration after applying it
-            particle.acceleration = glm::vec2(0.0f);
+            // Boundary collision detection
+            if (particle.position.x < 0) particle.position.x = 0;
+            if (particle.position.x > windowWidth) particle.position.x = windowWidth;
+            if (particle.position.y < 0) particle.position.y = 0;
+            if (particle.position.y > windowHeight) particle.position.y = windowHeight;
+
+            particle.acceleration = glm::vec2(0.0f); // Reset acceleration
         }
     }
 }
+
 
 void Cloth::enforceConstraints(int iterations) {
     for (int i = 0; i < iterations; ++i) {

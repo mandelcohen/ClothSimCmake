@@ -19,7 +19,7 @@ public:
     void initializeParticles();
     void initializeConstraints();
     void applyForces(float deltaTime);
-    void integrateMotion(float deltaTime);
+    void integrateMotion(float deltaTime, int windowWidth, int windowHeight);
     void enforceConstraints(int iterations);
 };
 

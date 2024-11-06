@@ -3,7 +3,7 @@
 
 int main(int argc, char* argv[]) {
     SDLWindow window(640, 480);
-    Cloth cloth(10, 10, 20.0f, 0.99f);
+    Cloth cloth(10, 10, 20.0f, 0.98f);
 
     const float deltaTime = 0.033f;
 
@@ -13,7 +13,7 @@ int main(int argc, char* argv[]) {
         running = window.handleEvents();
 
         cloth.applyForces(deltaTime);
-        cloth.integrateMotion(deltaTime);
+        cloth.integrateMotion(deltaTime, 640, 480);
         cloth.enforceConstraints(3);
 
         window.Render(cloth);
