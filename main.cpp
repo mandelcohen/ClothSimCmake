@@ -3,6 +3,7 @@
 
 int main(int argc, char* argv[]) {
     SDLWindow window(640, 480);
+
     Cloth cloth(10, 10, 20.0f, 0.98f);
 
     const float deltaTime = 0.033f;

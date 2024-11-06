@@ -28,17 +28,34 @@ void Cloth::initializeConstraints() {
 
             // Horizontal
             if (x < width - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing));
+                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing, 0.7f));
             }
 
             // Vertical
             if (y < height - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing));
+                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing, 0.7f));
             }
 
-            // Shear?
+            // Bending Constraints
+            for (int y = 0; y < height; ++y) {
+                for (int x = 0; x < width; ++x) {
+                    int idx = y * width + x;
+
+                    // Horizontal bending constraint
+                    if (x < width - 2) { // Two particles away horizontally
+                        constraints.push_back(Constraint(&particles[idx], &particles[idx + 2], spacing * 2, 0.5f));
+                    }
+
+                    // Vertical bending constraint
+                    if (y < height - 2) { // Two particles away vertically
+                        constraints.push_back(
+                                Constraint(&particles[idx], &particles[idx + width * 2], spacing * 2, 0.5f));
+                    }
+                }
+            }
         }
     }
+
 
     /*
     // Pin top row
@@ -46,6 +63,7 @@ void Cloth::initializeConstraints() {
         particles[x].isFixed = true;
     }
      */
+
 }
 
 void Cloth::applyForces(float deltaTime) {
