@@ -49,7 +49,7 @@ void Cloth::initializeConstraints() {
 }
 
 void Cloth::applyForces(float deltaTime) {
-    const glm::vec2 gravity(0.0f, 9.8f); // Gravity pointing down
+    const glm::vec2 gravity(0.0f, 98.0f); // Gravity pointing down
     for (auto& particle : particles) {
         if (!particle.isFixed) {
             particle.acceleration += gravity * deltaTime;
