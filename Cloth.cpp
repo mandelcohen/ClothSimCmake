@@ -83,20 +83,15 @@ void Cloth::enforceConstraints(int iterations) {
             Particle* p1 = constraint.p1;
             Particle* p2 = constraint.p2;
 
-            // Calculate the vector between the two particles
             glm::vec2 delta = p2->position - p1->position;
             float currentDistance = glm::length(delta);
-
-            // Calculate how much the distance is off from the rest length
             float difference = (currentDistance - constraint.restLength) / currentDistance;
 
-            // Adjust positions to satisfy the constraint
-            if (!p1->isFixed) {
-                p1->position += delta * 0.5f * difference;
-            }
-            if (!p2->isFixed) {
-                p2->position -= delta * 0.5f * difference;
-            }
+            // Apply the stiffness factor
+            glm::vec2 adjustment = delta * 0.5f * difference * constraint.stiffness;
+            if (!p1->isFixed) p1->position += adjustment;
+            if (!p2->isFixed) p2->position -= adjustment;
         }
     }
 }
+
