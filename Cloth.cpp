@@ -24,21 +24,21 @@ void Cloth::initializeConstraints() {
         for (int x = 0; x < width; ++x) {
             int index = y * width + x;
 
-            // Horizontal structural constraint
+            // Horizontal
             if (x < width - 1) {
                 constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing));
             }
 
-            // Vertical structural constraint
+            // Vertical
             if (y < height - 1) {
                 constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing));
             }
 
-            // Diagonal (shear) constraints and bending constraints can be added similarly.
+            // Shear?
         }
     }
 
-    // Fix the top row of particles
+    // Pin top row
     for (int x = 0; x < width; ++x) {
         particles[x].isFixed = true;
     }

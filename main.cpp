@@ -1,5 +1,3 @@
-#include <SDL.h>
-#include <iostream>
 #include "SDLWindow.h"
 #include "Cloth.h"
 
@@ -15,8 +13,6 @@ int main(int argc, char* argv[]) {
 
         SDL_Delay(16); // Cap frame rate
     }
-
-
 
     return 0;
 }
