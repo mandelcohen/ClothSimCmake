@@ -28,49 +28,45 @@ void Cloth::initializeConstraints() {
 
             // Horizontal
             if (x < width - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing, 0.7f));
+                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing, 0.8f));
             }
 
             // Vertical
             if (y < height - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing, 0.7f));
+                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing, 0.8f));
+            }
+        }
+    }
+    // Bending Constraints
+    for (int y = 0; y < height; ++y) {
+        for (int x = 0; x < width; ++x) {
+            int idx = y * width + x;
+
+            // Horizontal bending constraint
+            if (x < width - 2) { // Two particles away horizontally
+                constraints.push_back(Constraint(&particles[idx], &particles[idx + 2], spacing * 2, 0.3f));
             }
 
-            // Bending Constraints
-            for (int y = 0; y < height; ++y) {
-                for (int x = 0; x < width; ++x) {
-                    int idx = y * width + x;
-
-                    // Horizontal bending constraint
-                    if (x < width - 2) { // Two particles away horizontally
-                        constraints.push_back(Constraint(&particles[idx], &particles[idx + 2], spacing * 2, 0.5f));
-                    }
-
-                    // Vertical bending constraint
-                    if (y < height - 2) { // Two particles away vertically
-                        constraints.push_back(
-                                Constraint(&particles[idx], &particles[idx + width * 2], spacing * 2, 0.5f));
-                    }
-                }
+            // Vertical bending constraint
+            if (y < height - 2) { // Two particles away vertically
+                constraints.push_back(
+                        Constraint(&particles[idx], &particles[idx + width * 2], spacing * 2, 0.3f));
             }
         }
     }
 
-
-    /*
     // Pin top row
     for (int x = 0; x < width; ++x) {
         particles[x].isFixed = true;
     }
-     */
-
 }
 
 void Cloth::applyForces(float deltaTime) {
-    const glm::vec2 gravity(0.0f, 98.0f); // Gravity pointing down
+    const glm::vec2 gravity(0.0f, 50.0f); // Gravity pointing down
     for (auto& particle : particles) {
         if (!particle.isFixed) {
             particle.acceleration += gravity * deltaTime;
+            std::cout << "Particle acceleration: " << particle.acceleration.y << std::endl;
         }
     }
 }
@@ -82,6 +78,8 @@ void Cloth::integrateMotion(float deltaTime, int windowWidth, int windowHeight) 
             particle.position += (particle.position - particle.previousPosition) * dampingFactor
                                  + particle.acceleration * deltaTime * deltaTime;
             particle.previousPosition = tempPosition;
+
+            std::cout << "Particle new position: " << particle.position.x << ", " << particle.position.y << std::endl;
 
             // Boundary collision detection
             if (particle.position.x < 0) particle.position.x = 0;
@@ -107,6 +105,8 @@ void Cloth::enforceConstraints(int iterations) {
 
             // Apply the stiffness factor
             glm::vec2 adjustment = delta * 0.5f * difference * constraint.stiffness;
+            std::cout << "Adjustment: " << adjustment.x << ", " << adjustment.y << std::endl;
+
             if (!p1->isFixed) p1->position += adjustment;
             if (!p2->isFixed) p2->position -= adjustment;
         }
