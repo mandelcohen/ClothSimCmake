@@ -7,15 +7,15 @@
 
 
 ## Milestones (draft)
-| Period | Topics                                                       |
+| Week | Content                                                       |
 |--------|--------------------------------------------------------------|
-| Week 1 | Test-project setup in SDL; initial exploration of PBD fundamentals and simulation requirements alongside research. |
-| Week 2 | Develop basic particle and constraint systems, establish particle structure with position, velocity, acceleration, and mass properties. Decide on what to present in final demo. |
-| Week 3 | Implement core PBD algorithms, create initial constraints like distance and log tests for stability and structure. |
-| Week 4 | Introduce cloth-specific constraints like structural and bending, begin investigating damping and integration methods for smoother motion. |
-| Week 5 | Start shader programming, experiment with basic material properties to influence cloth look and feel. |
-| Week 6 | Optimise performance for real-time interaction, test appearance and response with varied cloth properties. |
-| Week 7 | Prepare for interactive demo; finalise adjustments to physical accuracy, visual fidelity, and responsiveness. |
+| 1 | Test-project setup in SDL; initial exploration of PBD fundamentals and simulation requirements alongside research. |
+| 2 | Develop basic particle and constraint systems, establish particle structure with position, velocity, acceleration, and mass properties. Decide on what to present in final demo. |
+| 3 | Implement core PBD algorithms, create initial constraints like distance and log tests for stability and structure. |
+| 4 | Introduce cloth-specific constraints like structural and bending, begin investigating damping and integration methods for smoother motion. |
+| 5 | Start shader programming, experiment with basic material properties to influence cloth look and feel. |
+| 6 | Optimise performance for real-time interaction, test appearance and response with varied cloth properties. |
+| 7 | Prepare for interactive demo; finalise adjustments to physical accuracy, visual fidelity, and responsiveness. |
 
 ## Key Features:
 1. **Custom Physics Engine**: Built to support real-time, life-like cloth simulation through Position-Based Dynamics.
