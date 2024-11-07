@@ -8,6 +8,16 @@ int main(int argc, char* argv[]) {
 
     Cloth cloth(10, 10, 20.0f, 0.98f);
 
+    /*
+    Cloth FlannelTweed = {
+            .spacing =
+            .dampingFactor =
+    };
+
+    Garment playerCape = new Garment(60, 180, FlannelTweed);
+    playerCape.fixPoint(point, worldPosition);
+    */
+
     const float deltaTime = 0.033f;
 
     bool running = true;
