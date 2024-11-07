@@ -17,7 +17,7 @@ int main(int argc, char* argv[]) {
 
         cloth.applyForces(deltaTime);
         cloth.integrateMotion(deltaTime, windowWidth, windowHeight);
-        cloth.enforceConstraints(3);
+        cloth.enforceConstraints(5);
 
         window.Render(cloth);
 

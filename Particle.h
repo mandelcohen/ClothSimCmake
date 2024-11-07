@@ -9,7 +9,7 @@ struct Particle {
     glm::vec2 previousPosition;
     glm::vec2 velocity;
     glm::vec2 acceleration;
-    float inverseMass;
+    float mass;
     bool isFixed;
 
     Particle(const glm::vec2& startPosition);
