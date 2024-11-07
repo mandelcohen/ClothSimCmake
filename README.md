@@ -61,18 +61,18 @@ classDiagram
 ## Main loop outline:
 ```mermaid
 flowchart TD
-    Start([Start Program]) --> InitWindow["Initialize SDLWindow (640x480)"]
-    InitWindow --> InitCloth["Initialize Cloth (10x10 grid, spacing 20.0, damping 0.98)"]
-    InitCloth --> SetDeltaTime["Set deltaTime = 0.033f"]
+    Start([Start Program]) --> InitWindow["Initialize SDLWindow"]
+    InitWindow --> InitCloth["Initialize Cloth (width*height, spacing, damping)"]
+    InitCloth --> SetDeltaTime["Set deltaTime"]
     SetDeltaTime --> MainLoop{"Main Loop: while (running)"}
 
-    MainLoop --> HandleEvents["Handle Events: window.handleEvents()"]
-    HandleEvents -->|running = true| ApplyForces["Apply Forces: cloth.applyForces(deltaTime)"]
-    ApplyForces --> IntegrateMotion["Integrate Motion: cloth.integrateMotion(deltaTime, 640, 480)"]
-    IntegrateMotion --> EnforceConstraints["Enforce Constraints: cloth.enforceConstraints(3)"]
-    EnforceConstraints --> Render["Render Cloth: window.Render(cloth)"]
+    MainLoop --> HandleEvents["window.handleEvents()"]
+    HandleEvents -->|running = true| ApplyForces["cloth.applyForces(deltaTime)"]
+    ApplyForces --> IntegrateMotion["cloth.integrateMotion(deltaTime, window.width, window.heigt)"]
+    IntegrateMotion --> EnforceConstraints["cloth.enforceConstraints(iterations)"]
+    EnforceConstraints --> Render["window.Render(cloth)"]
 
-    Render --> Delay["Delay for frame rate cap: SDL_Delay(16)"]
+    Render --> Delay["Delay to cap frame rate"]
     Delay --> MainLoop
     MainLoop -->|running = false| End([End Program])
 ```
