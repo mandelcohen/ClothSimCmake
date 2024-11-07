@@ -10,10 +10,10 @@
 | Week | Content                                                       |
 |--------|--------------------------------------------------------------|
 | 1 | Test-project setup in SDL; initial exploration of PBD fundamentals and simulation requirements alongside research. |
-| 2 | Develop basic particle and constraint systems, establish particle structure with position, velocity, acceleration, and mass properties. Decide on what to present in final demo. |
-| 3 | Implement core PBD algorithms, create initial constraints like distance and log tests for stability and structure. |
+| 2 | Develop basic particle and constraint systems, establish particle structure with position, velocity, acceleration, and mass properties. Decide on what to present in final demo. Research cmpute shaders.|
+| 3 | Implement core PBD algorithms as a compute shader, create initial constraints and log tests for stability and structure. |
 | 4 | Introduce cloth-specific constraints like structural and bending, begin investigating damping and integration methods for smoother motion. |
-| 5 | Start shader programming, experiment with basic material properties to influence cloth look and feel. |
+| 5 | Experiment with basic material properties to influence cloth look and feel. |
 | 6 | Optimise performance for real-time interaction, test appearance and response with varied cloth properties. |
 | 7 | Prepare for interactive demo; finalise adjustments to physical accuracy, visual fidelity, and responsiveness. |
 
