@@ -54,14 +54,16 @@ void Cloth::initializeConstraints() {
         }
     }
 
+    /*
     // Pin top row
     for (int x = 0; x < width; ++x) {
         particles[x].isFixed = true;
     }
+     */
 }
 
 void Cloth::applyForces(float deltaTime) {
-    const glm::vec2 gravity(0.0f, 300.0f); // Gravity pointing down
+    const glm::vec2 gravity(0.0f, 891.0f); // Gravity pointing down
     for (auto& particle : particles) {
         if (!particle.isFixed) {
             particle.acceleration += gravity * deltaTime;
