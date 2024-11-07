@@ -1,7 +1,6 @@
 #ifndef CLOTHSIMCMAKE_CONSTRAINT_H
 #define CLOTHSIMCMAKE_CONSTRAINT_H
 
-#pragma once
 
 class Particle;
 

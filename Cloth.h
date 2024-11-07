@@ -1,7 +1,6 @@
 #ifndef CLOTHSIMCMAKE_CLOTH_H
 #define CLOTHSIMCMAKE_CLOTH_H
 
-#pragma once
 #include <vector>
 #include "Particle.h"
 #include "Constraint.h"

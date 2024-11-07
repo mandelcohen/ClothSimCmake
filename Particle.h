@@ -1,7 +1,6 @@
 #ifndef CLOTHSIMCMAKE_PARTICLE_H
 #define CLOTHSIMCMAKE_PARTICLE_H
 
-#pragma once
 #include <glm/glm.hpp>
 
 struct Particle {
