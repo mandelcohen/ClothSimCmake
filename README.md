@@ -58,6 +58,28 @@ classDiagram
     Cloth --> Constraint : constraints
 ```
 
+## Main loop outline:
+```mermaid
+flowchart TD
+    Start([Start Program]) --> InitWindow["Initialize SDLWindow (640x480)"]
+    InitWindow --> InitCloth["Initialize Cloth (10x10 grid, spacing 20.0, damping 0.98)"]
+    InitCloth --> SetDeltaTime["Set deltaTime = 0.033f"]
+    SetDeltaTime --> MainLoop{"Main Loop: while (running)"}
+
+    MainLoop --> HandleEvents["Handle Events: window.handleEvents()"]
+    HandleEvents -->|running = true| ApplyForces["Apply Forces: cloth.applyForces(deltaTime)"]
+    ApplyForces --> IntegrateMotion["Integrate Motion: cloth.integrateMotion(deltaTime, 640, 480)"]
+    IntegrateMotion --> EnforceConstraints["Enforce Constraints: cloth.enforceConstraints(3)"]
+    EnforceConstraints --> Render["Render Cloth: window.Render(cloth)"]
+
+    Render --> Delay["Delay for frame rate cap: SDL_Delay(16)"]
+    Delay --> MainLoop
+    MainLoop -->|running = false| End([End Program])
+```
+
+
+
+
 
 
 
