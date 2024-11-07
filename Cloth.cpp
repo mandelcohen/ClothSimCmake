@@ -21,6 +21,8 @@ void Cloth::initializeParticles() {
 }
 
 void Cloth::initializeConstraints() {
+    float stiff = 0.1f;
+    float bending = 0.01f;
     // Structural Constraints
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
@@ -28,15 +30,17 @@ void Cloth::initializeConstraints() {
 
             // Horizontal
             if (x < width - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing, 0.8f));
+                constraints.push_back(Constraint(&particles[index], &particles[index + 1], spacing, stiff));
             }
 
             // Vertical
             if (y < height - 1) {
-                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing, 0.8f));
+                constraints.push_back(Constraint(&particles[index], &particles[index + width], spacing, stiff));
             }
         }
     }
+
+
     // Bending Constraints
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
@@ -44,22 +48,21 @@ void Cloth::initializeConstraints() {
 
             // Horizontal
             if (x < width - 2) {
-                constraints.push_back(Constraint(&particles[idx], &particles[idx + 2], spacing * 2, 0.3f));
+                constraints.push_back(Constraint(&particles[idx], &particles[idx + 2], spacing * 2, bending));
             }
 
             // Vertical
             if (y < height - 2) {
-                constraints.push_back(Constraint(&particles[idx], &particles[idx + width * 2], spacing * 2, 0.3f));
+                constraints.push_back(Constraint(&particles[idx], &particles[idx + width * 2], spacing * 2, bending));
             }
         }
     }
 
-    /*
+
     // Pin top row
     for (int x = 0; x < width; ++x) {
         particles[x].isFixed = true;
     }
-     */
 }
 
 void Cloth::applyForces(float deltaTime) {
